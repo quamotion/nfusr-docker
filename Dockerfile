@@ -14,7 +14,8 @@ RUN cd ~/libnfs \
 && ./bootstrap \
 && ./configure \
 && make \
-&& DESTDIR=/out make install
+&& DESTDIR=/out make install \
+&& make install
 
 RUN cd ~/nfusr \
 && ./bootstrap \
@@ -27,7 +28,7 @@ FROM ubuntu:xenial
 WORKDIR /
 
 RUN apt-get update \
-&& apt-get install -y libfuse \
+&& apt-get install -y libfuse2 \
 # Delete all the apt list files since they're big and get stale quickly
 && rm -rf /var/lib/apt/lists/*
 
