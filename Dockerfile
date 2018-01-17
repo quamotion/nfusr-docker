@@ -33,3 +33,4 @@ RUN apt-get update \
 && rm -rf /var/lib/apt/lists/*
 
 COPY --from=0 /out/usr/ /usr/
+COPY --from=0 /out/sbin/ /sbin/
