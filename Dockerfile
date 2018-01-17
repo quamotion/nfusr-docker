@@ -12,7 +12,7 @@ RUN git clone https://github.com/facebookincubator/nfusr ~/nfusr \
 
 RUN cd ~/libnfs \
 && ./bootstrap \
-&& ./configure \
+&& ./configure --prefix=/usr/ \
 && make \
 && DESTDIR=/out make install \
 && make install
